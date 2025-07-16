@@ -1,0 +1,1 @@
+Repo for uni work. Shit code ahead tbh

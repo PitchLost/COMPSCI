@@ -1,0 +1,11 @@
+english,māori
+One,Kotahi
+Two,Rua
+Three,Toru
+Four,Whā
+Five,Rima
+Six,Ono
+Seven,Whitu
+Eight,Waru
+Nine,Iwa
+Ten,Tekau

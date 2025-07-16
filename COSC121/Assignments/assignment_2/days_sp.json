@@ -1,0 +1,58 @@
+[
+    {
+        "term1": "Monday",
+        "lang1": "english",
+        "term2": "lunes",
+        "lang2": "spanish",
+        "streak": 0,
+        "due": null
+    },
+    {
+        "term1": "Tuesday",
+        "lang1": "english",
+        "term2": "martes",
+        "lang2": "spanish",
+        "streak": 0,
+        "due": null
+    },
+    {
+        "term1": "Wednesday",
+        "lang1": "english",
+        "term2": "mi\u00e9rcoles",
+        "lang2": "spanish",
+        "streak": 0,
+        "due": null
+    },
+    {
+        "term1": "Thursday",
+        "lang1": "english",
+        "term2": "jueves",
+        "lang2": "spanish",
+        "streak": 0,
+        "due": null
+    },
+    {
+        "term1": "Friday",
+        "lang1": "english",
+        "term2": "viernes",
+        "lang2": "spanish",
+        "streak": 0,
+        "due": null
+    },
+    {
+        "term1": "Saturday",
+        "lang1": "english",
+        "term2": "s\u00e1bado",
+        "lang2": "spanish",
+        "streak": 0,
+        "due": null
+    },
+    {
+        "term1": "Sunday",
+        "lang1": "english",
+        "term2": "domingo",
+        "lang2": "spanish",
+        "streak": 0,
+        "due": null
+    }
+]

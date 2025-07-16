@@ -1,0 +1,34 @@
+[
+    {
+        "due": null,
+        "lang1": "mi",
+        "term1": "kanikani",
+        "lang2": "en",
+        "term2": "dance",
+        "streak": 0
+    },
+    {
+        "due": null,
+        "lang1": "en",
+        "term1": "dance",
+        "lang2": "mi",
+        "term2": "kanikani",
+        "streak": 0
+    },
+    {
+        "due": null,
+        "lang1": "mi",
+        "term1": "ingoa",
+        "lang2": "en",
+        "term2": "name",
+        "streak": 0
+    },
+    {
+        "due": null,
+        "lang1": "en",
+        "term1": "name",
+        "lang2": "mi",
+        "term2": "ingoa",
+        "streak": 0
+    }
+]
