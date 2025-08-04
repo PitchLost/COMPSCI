@@ -1,0 +1,51 @@
+library("tidyverse") install.packages("readr")
+
+# Question 1
+
+## Create a vector for the data
+
+```{r}
+vector <- c(8453, 6721, 9546, 7832, 5298, 10234, 8765, 7123, 9871, 6540)
+```
+
+## Get the mean and std deviation of the vector
+
+```{r}
+vector_mean <- mean(vector)
+vector_std <- sd(vector)
+```
+
+## Get the mediuan of the vector
+
+```{r}
+vector_median <- median(vector)
+```
+
+## Create a histogram of the vector
+
+```{r}
+vector <- c(8453, 6721, 9546, 7832, 5298, 10234, 8765, 7123, 9871, 6540)
+hist(vector)
+```
+
+## Create a box plot of the vector
+
+```{r}
+vector <- c(8453, 6721, 9546, 7832, 5298, 10234, 8765, 7123, 9871, 6540)
+boxplot(vector, main = "Boxplot of Values", ylab = "Values", col = "lightblue")
+```
+
+# Question 2
+
+## Create a scatterplot on the data
+
+```{r}
+customer_data <- read.csv('DATA/DATA101_Assignment1_Data_customer_data_2025.csv')
+Xs <- customer_data$time_on_sit # TODO
+Ys <- customer_data$purchase_amount #TODO
+plot(Xs, Ys, xlab = 'Time spent on site (Mins)', ylab = 'Purchase amount ($)', main = 'Time spent on site Vs Purchase amount')
+
+log_time <- log(customer_data$time_on_site)
+log_purchase <- log(customer_data$purchase_amount+1)
+plot(log_time, log_purchase, xlab = 'Time spent on site (Mins)', ylab = 'Purchase amount ($)', main = 'Time spent on site Vs Purchase amount (Log transformed)')
+```
