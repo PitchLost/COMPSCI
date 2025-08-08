@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 **Due Date:** 8th August 2025
 
-**Student ID Number:** \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+**Student ID Number:** 83972706
 
 **Total Marks:** 20
 
@@ -47,9 +47,8 @@ Scenario C: The researcher obtains a list of all registered businesses in Christ
 
 b.  Suggest an improved sampling method that would minimise bias for this study. Justify your recommendation. (2 marks)
 
-*Use stratified random sampling to ensure representation across key subgroups of office workers — such as age, gender, industry, and company size. Within each stratum, randomly select participants to invite into the study.*
+*To make sure we’re properly representing key groups of office workers like different age ranges, genders, industries, and company sizes I’d use stratified random sampling. That way, we’re picking people randomly within each group, instead of just grabbing whoever’s easiest to reach. It helps cut down on selection bias and makes sure we’re getting a fair mix of Christchurch’s office worker population. It also makes the results more reliable because they actually reflect the diversity of the people we’re studying, not just whoever happened to volunteer.*
 
-*This method minimizes selection bias by ensuring that all relevant subgroups of the office worker population in Christchurch are proportionally represented. It also improves generalisability of the study results by reflecting the diversity of the population, rather than relying on convenience or voluntary samples.*
 
 ## Question Two: Observational vs. experimental studies (6 marks)
 
@@ -73,7 +72,7 @@ a.  Design a case-control study to investigate this relationship.
 
 *To measure the association I would use odds ratio compare the odds of low vitamin D levels in depressed individuals versus non-depressed individuals.*
 
-*The odds ratio 'table' will look like: Horizontal line: Low vitamin D, Normal Vitamin D, Total and then the Vertical line: Depressed, Not depressed
+*The odds ratio 'table' will look like: Horizontal line: Low vitamin D, Normal Vitamin D, Total and then the Vertical line: Depressed, Not depressed*
 
 b.  Design a cohort study to investigate this relationship.
 
@@ -104,10 +103,21 @@ c.  Compare the advantages and disadvantages of your case-control study versus y
 A study found that people who drink coffee regularly have lower rates of liver disease compared to non-coffee drinkers.
 
 a.  Explain what confounding means in the context of epidemiological studies. Provide the three criteria that a variable must meet to be considered a confounder. (2 marks)
+*Confounding is when the outcome or results are influenced by a third variable*
+1. *Must be associated with the independent variable*
+2. *Must be associated with the dependent variable*
+3. *It should not be a result of the independent variable (I can't really describe it simply, but an example would be if you were studying correlation between alcohol and lung disease or something, it's likely that people are drink are more likely to smoke than people who do not thus smoking is a confounding variable)*
+
 
 b.  Identify two potential confounding variables that could explain the observed association between coffee consumption and liver disease. For each confounder, explain how it could be related to both coffee consumption and liver disease risk. (2 marks)
 
+- *Smoking*
+*People who drink coffee are likely prone to the addictive effects of the caffeine. Addictive habbits such as that are often grouped with similar, such as smoking (Or even vaping) for the nicotine. Smoking will almost certainly have a strong effect on someone's liver.*
+- *Alcohol Consumption*
+*People who do not drink coffee are far less likely to consume alcohol as well. One of the greatest risks of alcohol is the damage it does to your liver so this is obviously going to affect the results*
+
 c.  The researchers want to establish whether coffee consumption actually causes a reduction in liver disease risk. Explain why observational studies alone cannot definitively establish causality, and describe what type of study design would provide the strongest evidence for a causal relationship. (1 mark)
+*People who drink coffee likely have different lifestyles to those who do not, for example they may not consume energy drinks which are usually high in sugar and other products that probably have an effect on the liver. A better study method would be Randomized Control Trial. Participants would be assigned to either a group that drinks coffee reguarly and a group that does not (And also avoids alternative caffeine sources such as energy drinks). This will help mitigate the effects of confounding variables.*
 
 ## Question Four: Introduction to Probability (5 marks)
 
@@ -115,9 +125,28 @@ In Question Three, you used a study that found people who drink coffee regularly
 
 a.  Import the data into R, and create a table using the \texttt{table} function summarising the information in the \texttt{Coffee} and \texttt{liver} variables. (1 mark)
 
+```{r, ECHO=TRUE}
+csv_data <- read.csv('coffeeliver.csv', header = TRUE)
+
+# I had to add all the labels and stuff the data was too hard to understand otherwise!!
+# I think it will probably go off the page because of how long the line is.
+summary_table <- table(factor(csv_data$Coffee, levels = c(0, 1), labels = c('Not Coffee', 'Coffee')), factor(csv_data$Liver, levels = c(0, 1), labels = c('Not Liver', 'Liver')))
+summary_table
+```
+
+
     *Hint: As the data is stored as a .csv file, read the function* \texttt{read.csv} to import the data, with header=TRUE, as the file has column names \texttt{Coffee} and \texttt{Liver}.
 
 b.  What are the set of possible outcomes (events) in the Coffee liver disease study? (1 mark)
+
+*Drinks coffee AND has liver disease*
+
+*Drinks coffee AND does not have liver disease*
+
+*Does not drink coffee AND has liver disease*
+
+*Does not drink coffee AND does not have liver disease*
+
 
     *Hint: You might find it easier to express the individual outcomes as combinations of events*
 
@@ -127,9 +156,25 @@ c.  From the information provided in the table you constructed in part a., what 
     -   $\Pr(\text{Having Liver Disease})$
     -   $\Pr(\text{Drinking Coffee or Having Liver Disease})$
 
+```{r, ECHO=TRUE}
+# These are the values from the table in the last question
+total <- 2341 + 374 + 5184 + 461
+
+pr_coffee = (5184 + 461) / total
+pr_liver = (374+461) / total
+pr_coffee_liver = (5184 + 461 + 374) / total
+
+pr_coffee
+pr_liver
+pr_coffee_liver
+```
+
+
 d.  Are *Drinking Coffee* and *Having Liver Disease* examples of
 
     -   disjoint events,
     -   complete exhaustive events?
 
     Explain why. (1 mark)
+*It is a complete exhaustive event. If they were disjoint events they would not be able to happen at the same time but we can clearly see in the table that they do sometimes occur together.*
+
